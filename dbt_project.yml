@@ -15,8 +15,6 @@ test-paths: ["data-tests"]
 seed-paths: ["seeds"]
 macro-paths: ["macros"]
 snapshot-paths: ["snapshots"]
-
-target-path: "target"
 clean-targets:
   - "target"
   - "dbt_packages"
@@ -34,3 +32,8 @@ models:
       +materialized: view
     marts:
       +materialized: table
+
+query-comment:
+  comment: "{{ dbt_model_build_logger.query_comment(node) }}"
+flags:
+  require_generic_test_arguments_property: true
