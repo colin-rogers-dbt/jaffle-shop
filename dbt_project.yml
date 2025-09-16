@@ -12,7 +12,7 @@ profile: default # Put your profile here
 model-paths: ["models"]
 analysis-paths: ["analyses"]
 test-paths: ["data-tests"]
-seed-paths: ["seeds"]
+seed-paths: ["seeds", "jaffle-data"]
 macro-paths: ["macros"]
 snapshot-paths: ["snapshots"]
 
@@ -23,6 +23,8 @@ clean-targets:
 
 vars:
   "dbt_date:time_zone": "America/Los_Angeles"
+  dbt_model_build_logger:
+    model_monitor_start_date: "2026-09-16"
 
 seeds:
   jaffle_shop:
@@ -34,3 +36,6 @@ models:
       +materialized: view
     marts:
       +materialized: table
+      
+query-comment:
+  comment: "{{ dbt_model_build_logger.query_comment(node) }}"  
