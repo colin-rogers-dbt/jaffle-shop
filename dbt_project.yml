@@ -23,6 +23,10 @@ vars:
   "dbt_date:time_zone": "America/Los_Angeles"
   dbt_model_build_logger:
     model_monitor_start_date: "2026-09-16"
+      # Schema where the tracking table will be created
+    artifact_schema: "{{ target.schema }}"
+    # Table name for tracking model executions
+    artifact_table: "dbt_model_executions"
 
 seeds:
   jaffle_shop:
@@ -35,7 +39,7 @@ models:
     marts:
       +materialized: table
 
-query-comment:
-  comment: "{{ dbt_model_build_logger.query_comment(node) }}"
+# query-comment:
+#   comment: "{{ dbt_model_build_logger.query_comment(node) }}"
 flags:
   require_generic_test_arguments_property: true

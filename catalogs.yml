@@ -1,0 +1,10 @@
+catalogs:
+  - name: glue_iceberg_rest_catalog
+    active_write_integration: glue_iceberg_rest_catalog_integration
+    write_integrations:
+      - name: glue_iceberg_rest_catalog_integration
+        table_format: iceberg
+        catalog_type: iceberg_rest
+        adapter_properties:
+          catalog_linked_database: test_catalog_linked_db_glue
+          catalog_linked_database_type: glue
