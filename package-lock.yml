@@ -1,18 +1,14 @@
 packages:
-- git: https://github.com/dbt-labs/dbt-audit-helper.git
-  name: audit_helper
-  revision: |
-    014af559efd9dd1fa6551cb348fcc6d4def9a1e7
-  __unrendered__: {}
-- package: godatadriven/dbt_date
-  name: dbt_date
-  version: 0.10.0
-- git: https://{{ env_var('DBT_GITHUB_USERNAME') }}:{{env_var('DBT_ENV_SECRET_GH_PERSONAL_ACCESS_TOKEN')}}@github.com/dbt-labs/model-build-reporter.git
-  name: dbt_model_build_logger
-  revision: |
-    216839a842b9d666226f3bfdbebd2584572682db
-  __unrendered__: {}
-- package: dbt-labs/dbt_utils
-  name: dbt_utils
-  version: 1.1.1
-sha1_hash: 95f3c45fb67451ad98fcbffb66baa0f3353a4be8
+  - name: dbt_utils
+    package: dbt-labs/dbt_utils
+    version: 1.1.1
+  - name: dbt_date
+    package: godatadriven/dbt_date
+    version: 0.10.0
+  - git: https://github.com/dbt-labs/dbt-audit-helper.git
+    name: audit_helper
+    revision: acc7cad15a9a5cd0c2a928fafb888cffd135790e
+  - git: https://{{ env_var('DBT_GITHUB_USERNAME') }}:{{env_var('DBT_ENV_SECRET_GH_PERSONAL_ACCESS_TOKEN')}}@github.com/dbt-labs/model-build-reporter.git
+    name: dbt_pov_model_cost_calculator
+    revision: b5487cd2c1acc4dbd8e70a3ce74c54a147981886
+sha1_hash: f23669d793c8eaeabb04bc370bb39045b35c93de
