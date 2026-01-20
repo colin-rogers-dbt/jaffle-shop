@@ -7,8 +7,8 @@ packages:
     version: 0.10.0
   - git: https://github.com/dbt-labs/dbt-audit-helper.git
     name: audit_helper
-    revision: acc7cad15a9a5cd0c2a928fafb888cffd135790e
-  - git: https://{{ env_var('DBT_GITHUB_USERNAME') }}:{{env_var('DBT_ENV_SECRET_GH_PERSONAL_ACCESS_TOKEN')}}@github.com/dbt-labs/model-build-reporter.git
+    revision: 3bd0ca4e9d79b7d740ad7e77384b3d03a16cf242
+  - git: https://github.com/dbt-labs/dbt-pov-model-cost-calculator
     name: dbt_pov_model_cost_calculator
-    revision: b5487cd2c1acc4dbd8e70a3ce74c54a147981886
-sha1_hash: f23669d793c8eaeabb04bc370bb39045b35c93de
+    revision: 28180e9c88874da7a62c418cc3cd527ae66d2226
+sha1_hash: 9b16421470a99d0185c3690152383feeb2ae2ab0
